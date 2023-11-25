@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Advent of Code 2022, Rust, egui and Wasm"
-date:   2023-11-25 19:18:00 +1100
+date:   2023-11-25 19:57:00 +1100
 categories: blog
 tags: rust egui wasm webapp aoc2022
+excerpt_separator: <!--more-->
 ---
 I've been going through the [Advent of Code 2022][aoc2022] (aoc2022) challenges in an attempt to improve my coding skills in the [Rust][rust-lang] programming language. 
 
@@ -13,6 +14,9 @@ I'm up to [day 12][aoc2022-day12] of the challenges at the time of writing, and 
 (it runs in your browser)
 
 [![aoc2022_day12_pathfinder_webapp](/assets/images/aoc2022_day12_pathfinder.png)][gh-page-jwebmeister-aoc2022]
+
+<!--more-->
+---
 
 I did peek at a few solutions from others. I sometimes peeked when I ran into roadblocks, but I always peeked after I completed a challenge, curious to see how others approached it. 
 
@@ -25,6 +29,8 @@ Some folks were also going beyond just solving the challenges, going on to build
 Inspired by others going beyond just solving the challenges, I decided to make an interactive web app visualising one of the challenges and my solution for it. Specifically [day 12][aoc2022-day12] of the aoc2022 challenges, a [pathfinding][wiki-pathfinding] problem. 
 
 I attached a screenshot of the interactive web app near the start of this post, but you can play with the *interactive web app* in your browser here: [jwebmeister.github.io/aoc2022][gh-page-jwebmeister-aoc2022]
+
+---
 
 The challenge for [day 12][aoc2022-day12]:
 - `Goal`: find the `minimum number of steps` required to go from the `Start` location at ground level, to the `End` location 25 units above ground. 
@@ -42,6 +48,8 @@ The app visualises each step of the BFS as it progresses through the challenges 
 
 It looks cool watching it run through the big grid!
 
+---
+
 One item of mild interest is that my current implementation is non-deterministic. The specific path from the start location to the end goal location can vary between runs. However, the minimum number of steps required to reach the goal does not vary.
 
 Looking through my code, I used the Rust `std::collections` implementations of `HashMap` and `HashSet` for the BFS. By default, these implementations use a randomly seeded hashing algorithm, according to the [docs for HashMap][rust-doc-hashmap], with `HashSet` being an implementation of `HashMap` according to [docs for HashSet][rust-doc-hashset].  
@@ -49,6 +57,8 @@ Looking through my code, I used the Rust `std::collections` implementations of `
 That explains it!  
 
 It should be fairly trivial to change over to a deterministic hashing algorithm, or to use different data structure implementations, but the solution for the challenge only needed the *number of minimum steps* to reach the goal, so I haven't bothered to change it.
+
+---
 
 In terms of tooling and crates for the web app, I used [egui + eframe][gh-repo-egui] and [eframe template][gh-repo-eframe-template] for the GUI framework. I had used them before, just not deployed to Wasm before. 
 
@@ -69,11 +79,14 @@ One item on my "next steps" list is to figure out how to embed an egui web app w
 
 Every attempt I've made so far to embed the egui app within a web page, has the app move (paint) to the top of the browser after any interaction, instead of staying in-place halfway down the page where it was initialised.  This might be a limitation of egui, it's rendering backend, or something else entirely, but I haven't dived deep enough to pin-point and confirm the root-cause, nor figure out any workarounds.
 
+---
+
 I've waffled on long enough. There's hopefully enough useful information in this post to make reading it worthwhile, otherwise, there are links to the web app and code below.
 
 You can run the egui app in your browser at [jwebmeister.github.io/aoc2022][gh-page-jwebmeister-aoc2022]
 
 You can find the code at [github.com/jwebmeister/aoc2022][gh-repo-jwebmeister-aoc2022]
+
 
 [rust-lang]: https://www.rust-lang.org/
 [rust-doc-hashmap]: https://doc.rust-lang.org/std/collections/struct.HashMap.html
