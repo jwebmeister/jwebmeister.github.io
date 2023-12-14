@@ -9,9 +9,12 @@ excerpt_separator: <!--more-->
 Tacspeak - speech recognition for gaming. I made something cool! 
 
 Link to [Youtube video](https://youtu.be/qBL0bCt_VMo) of me playing Ready or Not, commanding the AI with Tacspeak.
+
 [![Watch the video demo of me using Tacspeak while playing Ready or Not](https://img.youtube.com/vi/qBL0bCt_VMo/maxresdefault.jpg)](https://youtu.be/qBL0bCt_VMo)
 
 Link to [Tacspeak Github repo](https://github.com/jwebmeister/tacspeak) 
+
+Link to [Tacspeak Nexusmods mod page](https://www.nexusmods.com/readyornot/mods/3159)
 
 <!--more-->
 ---
@@ -40,5 +43,5 @@ Also built atop the excellent [Kaldi Active Grammar](https://github.com/daanzu/k
 See the links below for more info:
 
 - [Tacspeak Github repo](https://github.com/jwebmeister/tacspeak) 
-- [Tacspeak Nexusmods mod page](https://www.nexusmods.com/readyornot/mods/3159) (files currently being reviewed)
+- [Tacspeak Nexusmods mod page](https://www.nexusmods.com/readyornot/mods/3159)
 - [Youtube video](https://youtu.be/qBL0bCt_VMo) of me playing Ready or Not, commanding the AI with Tacspeak.
